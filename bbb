@@ -1,0 +1,456 @@
+1)
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      function operate(op)
+      {
+        var v1=parseInt(document.getElementById('in1').value);
+        var v2=parseInt(document.getElementById('in2').value);
+        var ans;
+        if(op=='+')
+        {
+          ans=v1+v2;
+        }
+        else if(op=='-')
+        {
+          ans=v1-v2;
+        }
+        else if(op=='*')
+        {
+          ans=v1*v2;
+        }
+        else
+        {
+          ans=v1/v2;
+        }
+        document.getElementById('answer').value=ans;
+      }
+    </script>
+  </head>
+  <body style="background-color:grey">
+    <h1 align="center">Calculator</h1>
+    <table align="center" border=1 style="border-collapse:collapse;background-color:#c4c4c4;height:500px;text-align:center;width:400px;">
+      <tr>
+        <td>Result</td>
+        <td>
+          <input type="number" id="answer" readonly="readonly" disabled="disabled">
+        </td>
+      </tr>
+      <tr>
+        <td>Input1</td>
+      <td>
+        <input type="number" id="in1">
+      </td>
+      </tr>
+      <tr>
+        <td>Input2</td>
+        <td>
+        <input type="number" id="in2">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <button value="+" onclick="operate(this.value)">+</button>
+          <button value="-" onclick="operate(this.value)">-</button>
+          <button value="*" onclick="operate(this.value)">*</button>
+          <button value="/" onclick="operate(this.value)">/</button>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+
+2)
+
+<html>
+<body>
+<p id="demo"></p>
+<script>
+var ids=document.getElementById('demo');
+var size=5;
+var var1=setInterval(inTimer,100);
+
+function inTimer()
+{
+ids.innerHTML="TEXT-GROWING : "+size;
+ids.style.color="red";
+ids.style.fontSize=size;
+size=size+5;
+if(size>75)
+{
+clearInterval(var1);
+var2=setInterval(deTimer,100);
+}
+}
+function deTimer()
+{
+ids.innerHTML="TEXT-SHRINKING : "+size;
+ids.style.color="blue";
+ids.style.fontSize=size;
+size=size-5;
+if(size==5)
+{
+clearInterval(var2);
+var1=setInterval(inTimer,100);
+}
+}
+</script>
+</body>
+</html>
+
+
+3)
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body align="center" style="color:blue;background:#c4c4c4">
+    <h1>Table</h1>
+    <table align="center" border=1 style="border-collapse:collapse;background:lightblue">
+      <tr style="background:lightgreen">
+        <th>Number</th>
+        <th>Square</th>
+        <th>Cube</th>
+      </tr>
+      <script>
+        for(var i=1;i<=10;i++)
+        document.write("<tr><td>"+i+"</td><td>"+i*i+"</td><td>"+i*i*i+"</td></tr>");
+        </script>
+    </table>
+  </body>
+</html>
+
+
+4)
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var a=prompt('input');
+      if(isNaN(a))
+      {
+        var aa=a.toUpperCase();
+        for(var i=0;i<aa.length;i++)
+        {
+          if(aa[i]=='A' || aa[i]=='E' || aa[i]=='I' || aa[i]=='O' || aa[i]=='U')
+          {
+            alert('vowel at position '+(i+1));
+            break;
+          }
+          if(i==aa.length-1)
+          {
+            alert('Vowel not found');
+          }
+        }
+      }
+      else
+      {
+      var bb=parseInt(a);
+      var temp;
+      var rev=0;
+      while(bb!=0)
+      {
+        temp=bb%10;
+        rev=(rev*10)+temp;
+        bb=parseInt(bb/10);
+      }
+      alert(rev);
+      /*
+      var ab=a.split('');
+      var ac=ab.reverse();
+      var ad=ac.join('');
+      alert(ad);
+      */
+      }
+      
+    </script>
+  </body>
+</html>
+
+
+5)
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="x.css"?>
+<students>
+<student>
+<sname>Manoj</sname>
+<usn>045</usn>
+<sections>A</sections>
+<branch>CSE</branch>
+<college>PESITM</college>
+</student>
+<student>
+<sname>Manoj</sname>
+<usn>045</usn>
+<sections>A</sections>
+<branch>CSE</branch>
+<college>PESITM</college>
+</student>
+<student>
+<sname>Manoj</sname>
+<usn>045</usn>
+<sections>A</sections>
+<branch>CSE</branch>
+<college>PESITM</college>
+</student>
+</students>
+
+x.css
+students
+{
+  color:red;
+  background-color:bisque;
+}
+student
+{
+  display:block;
+  padding: 10px;
+  background: #c4c4c4;
+  border:1px solid green;
+  margin-left: 35%;
+  width:400px;
+}
+sname
+{
+  font-size: 35px;
+  color:blue;
+  display:block;
+}
+sname:before
+{
+  content:"Sname: ";
+  font-size:45px;
+  color:red;
+}
+usn
+{
+  font-size: 35px;
+  color:blue;
+  display:block;
+}
+usn:before
+{
+  content:"USN: ";
+  font-size:45px;
+  color:red;
+}
+sections
+{
+  font-size: 35px;
+  color:blue;
+  display:block;
+}
+sections:before
+{
+  content:"Section: ";
+  font-size:45px;
+  color:red;
+}
+branch
+{
+  font-size: 35px;
+  color:blue;
+  display:block;
+}
+branch:before
+{
+  content:"Branch: ";
+  font-size:45px;
+  color:red;
+}
+college
+{
+  font-size: 35px;
+  color:blue;
+  display:block;
+}
+college:before
+{
+  content:"College: ";
+  font-size:45px;
+  color:red;
+}
+
+
+6)
+<meta http-equiv="refresh" content="1"/>
+<?php
+echo "<div style='color:red;'>";
+echo "Date and Time";
+echo "<br>Time: ";
+echo "<span style='color:blue;'>";
+echo date("d-m-y");
+echo "</span>";
+echo "<br>Date: ";
+echo "<span style='color:blue;'>";
+date_default_timezone_set('Asia/Kolkata');
+echo date("h-i-sa");
+echo "</span>";
+echo "</div>";
+?>
+
+
+7)
+<?php
+$file='countya.txt';
+$count=file_get_contents($file);
+file_put_contents($file,$count+1);
+echo 'you are : '.$count;
+?>
+
+
+8)
+a)
+<?php
+extract($_POST);
+if(isset($save))
+{
+switch($ch)
+  {
+	case '+':
+	$res=$fn+$sn;
+	break;
+
+	case '-':
+	$res=$fn-$sn;
+	break;
+
+	case '*':
+	$res=$fn*$sn;
+	break;
+
+	case '/':
+	$res=$fn/$sn;
+	break;
+  }
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<form method="post">
+<table border="1"  align="center">
+<tr>
+<th>Your result</th>
+<th><input type="number" readonly="readonly" disabled="disabled" value="<?php echo @$res;?>"/></th>
+</tr>
+<tr>
+<th>Enter your first number</th>
+<th><input type="number" name="fn" value="<?php echo @$fn;?>"/></th>
+</tr>
+<tr>
+<th>Enter your second number</th>
+<th><input type="number" name="sn" value="<?php echo @$sn;?>"/></th>
+</tr>
+<tr>
+<th> Select choice</th>
+<th>
+<select name="ch">
+<option>+</option>
+<option>-</option>
+<option>*</option>
+<option>/</option>
+</select>
+</th>
+</tr>
+<tr>
+<th colspan="2">
+<input type="submit" name="save" value="show result"/>
+</th>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
+
+b)
+<?php
+$m1=array(array(1,2),array(3,4));
+$m2=array(array(1,2),array(3,4));
+$r1=count($m1);
+$r2=count($m2);
+$c1=count($m1[0]);
+$c2=count($m2[0]);
+echo "Array1: ".$r1."*".$c1;
+echo "<br>";
+echo "<br>";
+echo "Array2: ".$r2."*".$c2;
+echo "<br>";
+echo "<br>";
+echo "Matrix1 <br>";
+for($i=0;$i<$r1;$i++)
+{
+  for($j=0;$j<$c1;$j++)
+  {
+    echo $m1[$i][$j]." ";
+  }
+  echo "<br>";
+}
+echo "<br>";
+echo "Matrix2 <br>";
+for($i=0;$i<$r2;$i++)
+{
+  for($j=0;$j<$c2;$j++)
+  {
+    echo $m2[$i][$j]." ";
+  }
+  echo "<br>";
+}
+echo "<br>";
+echo "Matrix1 Transpose <br>";
+for($i=0;$i<$r1;$i++)
+{
+  for($j=0;$j<$c1;$j++)
+  {
+    echo $m1[$j][$i]." ";
+  }
+  echo "<br>";
+}
+echo "<br>";
+echo "Matrix2 Transpose <br>";
+for($i=0;$i<$r1;$i++)
+{
+  for($j=0;$j<$c1;$j++)
+  {
+    echo $m2[$j][$i]." ";
+  }
+  echo "<br>";
+}
+echo "<br>";
+echo "Matrix Addition <br>";
+for($i=0;$i<$r1;$i++)
+{
+  for($j=0;$j<$c1;$j++)
+  {
+    echo $m1[$i][$j]+$m2[$i][$j]." ";
+  }
+  echo "<br>";
+}
+echo "<br>";
+echo "Matrix Multiplication <br>";
+for($i=0;$i<$r1;$i++)
+{
+  for($j=0;$j<$c1;$j++)
+  {
+    $res[$i][$j]=0;
+    for($k=0;$k<$c2;$k++)
+      $res[$i][$j]=$res[$i][$j]+($m1[$i][$k]*$m2[$k][$j]);
+      echo $res[$i][$j]." ";
+  }
+  echo "<br>";
+}
+?>
